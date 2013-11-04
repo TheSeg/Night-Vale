@@ -1,14 +1,14 @@
 {
-  "name": "welcome-to-night-vale-game-of-you",
-  "version": "0.0.1",
-  "author": "John 'Seg' Seggerson <seg@segonmedia.com>",
-  "homepage": "http://nightvale.segonmedia.com/",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/TheSeg/Night-Vale"
-  },
-  "devDependencies": {
-    "grunt": "~0.4.1",
-    "grunt-contrib": "~0.4.0"
-  }
+    "name": "welcome-to-night-vale-game-of-you",
+    "version": "0.0.1",
+    "author": "John 'Seg' Seggerson <seg@segonmedia.com>",
+    "homepage": "http://nightvale.segonmedia.com/",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/TheSeg/Night-Vale"
+    },
+    "devDependencies": {
+        "grunt": "~0.4.1",
+        "grunt-contrib": "~0.4.0"
+    }
 }
