@@ -1,0 +1,7 @@
+safe: true
+lsi: false
+markdown:  redcarpet
+permalink: pretty
+pygments:  true
+timezone: America/Los_Angeles
+exclude: ["README.md","bower.json","node_modules","vendor"]
