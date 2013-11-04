@@ -1,0 +1,19 @@
+{
+    "name": "Welcome to Night Vale: The Game of You",
+    "version": "0.0.1",
+    "description": "A video game proposal for 'Welcome to Night Vale' by John 'Seg' Seggerson.",
+    "homepage": "http://nightvale.segonmedia.com/",
+    "bugs": "https://github.com/TheSeg/night-vale/issues",
+    "author": {
+        "name": "John 'Seg' Seggerson",
+        "url": "http://theseg.github.io"
+    },
+    "dependencies": {
+        "jquery": "^2.0.3",
+        "font-awesome": "^4.0.1",
+        "holderjs": "^2.2.0",
+        "html5shiv": "^3.7.0",
+        "bootstrap": "^3.0.1",
+        "respond": "^1.3.0"
+    }
+}
