@@ -42,6 +42,9 @@ module.exports = function(grunt) {
             "<%= dirs.less %>",
           ],
         },
+        files: {
+          "<%= dirs.css %>/nvgoy.min.css": "<%= dirs.less %>/nvgoy-core.less",
+        },
       },
     },
     concat: {
