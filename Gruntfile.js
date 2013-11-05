@@ -7,8 +7,8 @@ module.exports = function(grunt) {
       version: '0.0.1'
     },
     dirs: {
-      javascript_dist: "js",
-      javascript_src: "js/_src",
+      js_dist: "js",
+      js_src: "_js_src",
       less: "_less",
       css: "css",
       bower_components: "_bower_components",
@@ -42,6 +42,9 @@ module.exports = function(grunt) {
             "<%= dirs.less %>",
           ],
         },
+        files: {
+          "<%= dirs.css %>/nvgoy.min.css": "<%= dirs.less %>/nvgoy-core.less",
+        },
       },
     },
     concat: {
@@ -63,21 +66,39 @@ module.exports = function(grunt) {
           '<%= dirs.bs.root %>/js/tab.js',
           '<%= dirs.bs.root %>/js/affix.js'
         ],
-        dest:"<%= dirs.javascript_dist %>/bootstrap.js",
+        dest:"<%= dirs.js_dist %>/bootstrap.js",
         nonull: true,
       },
+      custom: {
+        src: [
+          '<%= dirs.js_src %>/*.js',
+        ],
+        dest:"<%= dirs.js_dist %>/nvgoy.js",
+        nonull: true,
+      }
     },
     copy: {
       options: {
         stripBanners:true,
       },
+      jquery: {
+        files: [
+          {
+            expand: true,
+            src: "<%= dirs.jquery %>/jquery.*",
+            dest: "<%= dirs.js_dist %>/",
+            flatten: true,
+            filter: 'isFile',
+          },
+        ],
+      },
       html5shiv: {
         src: "<%= dirs.html5shiv %>/src/html5shiv.js",
-        dest: "<%= dirs.javascript_dist %>/html5shiv.js",
+        dest: "<%= dirs.js_dist %>/html5shiv.js",
       },
       respond: {
         src:"<%= dirs.respond %>/respond.min.js",
-        dest: "<%= dirs.javascript_dist %>/respond.min.js",
+        dest: "<%= dirs.js_dist %>/respond.min.js",
       },
       font_awesome: {
         files: [
@@ -104,14 +125,19 @@ module.exports = function(grunt) {
       },
       bootstrap: {
         src: '<%= concat.bootstrap.dest %>',
-        dest: '<%= dirs.javascript_dist %>/bootstrap.min.js',
+        dest: '<%= dirs.js_dist %>/bootstrap.min.js',
         nonull: true,
       },
       holderjs: {
-        src: ['<%= dirs.holderjs %>/holder.js'],
-        dest: '<%= dirs.javascript_dist %>/holder.min.js',
+        src: '<%= dirs.holderjs %>/holder.js',
+        dest: '<%= dirs.js_dist %>/holder.min.js',
         nonull: true,
       },
+      custom: {
+        src: '<%= concat.custom.dest %>',
+        dest: '<%= dirs.js_dist %>/nvgoy.min.js',
+        nonull: true,
+      }
     },
   });
   
