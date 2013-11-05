@@ -43,7 +43,7 @@ module.exports = function(grunt) {
           ],
         },
         files: {
-          "<%= dirs.css %>/nvgoy.min.css": "<%= dirs.less %>/nvgoy-core.less",
+          "<%= dirs.css %>/nvgay.min.css": "<%= dirs.less %>/nvgay-core.less",
         },
       },
     },
@@ -73,7 +73,7 @@ module.exports = function(grunt) {
         src: [
           '<%= dirs.js_src %>/*.js',
         ],
-        dest:"<%= dirs.js_dist %>/nvgoy.js",
+        dest:"<%= dirs.js_dist %>/nvgay.js",
         nonull: true,
       }
     },
@@ -135,7 +135,7 @@ module.exports = function(grunt) {
       },
       custom: {
         src: '<%= concat.custom.dest %>',
-        dest: '<%= dirs.js_dist %>/nvgoy.min.js',
+        dest: '<%= dirs.js_dist %>/nvgay.min.js',
         nonull: true,
       }
     },

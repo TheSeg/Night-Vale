@@ -1,7 +1,7 @@
 LICENSE
 ==========
 
-##"The Game of You" Game Design Treatment
+##"The Game About You" Design Treatment
 This design treatment is NOT stationed by Commonplace Books and it's creators.
 
 The game design treatment is written by [John "Seg" Seggerson](http://theseg.github.io/). Seg would love to help out in making this actually a thing... <3
