@@ -78,6 +78,17 @@ module.exports = function(grunt) {
       options: {
         stripBanners:true,
       },
+      jquery: {
+        files: [
+          {
+            expand: true,
+            src: "<%= dirs.jquery %>/jquery.*",
+            dest: "<%= dirs.js_dist %>/",
+            flatten: true,
+            filter: 'isFile',
+          },
+        ],
+      },
       html5shiv: {
         src: "<%= dirs.html5shiv %>/src/html5shiv.js",
         dest: "<%= dirs.js_dist %>/html5shiv.js",
