@@ -139,6 +139,17 @@ module.exports = function(grunt) {
         nonull: true,
       }
     },
+    watch: {
+      options: {
+        
+      },
+      js: {
+        files: [
+          "<%= dirs.js_src %>/*.js"
+        ],
+        tasks: [ "concat:custom", "uglify:custom" ],
+      },
+    },
   });
   
   // Load the plugins for tasks.
@@ -154,7 +165,7 @@ module.exports = function(grunt) {
   grunt.registerTask( 'init', [ 'init' , 'build' ] );
   
   // Build Task
-  grunt.registerTask( 'build' , [ 'concat' , 'copy' , 'less' , 'uglify' ] );
+  grunt.registerTask( 'build' , [ 'copy' , 'concat' , 'less' , 'uglify' ] );
 
   // Default task(s).
   grunt.registerTask( 'default' , ['build'] );
