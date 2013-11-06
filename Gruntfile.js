@@ -140,14 +140,15 @@ module.exports = function(grunt) {
       }
     },
     watch: {
-      options: {
-        
-      },
       js: {
         files: [
           "<%= dirs.js_src %>/*.js"
         ],
         tasks: [ "concat:custom", "uglify:custom" ],
+      },
+      less: {
+        files: "<%= dirs.less %>/*.less",
+        tasks: [ "less:production" ],
       },
     },
   });
