@@ -1,4 +1,7 @@
 // Welcome to Night Vale: The Game About You
+//  Bootstrap Theme by John "Seg" Seggerson
+//  http://nightvale.segonmedia.com/
+
 // Variables
 // --------------------------------------------------
 
@@ -27,13 +30,13 @@
 // Scaffolding
 // -------------------------
 
-@body-bg:               #fff;
-@text-color:            @gray-dark;
+@body-bg:               @nv-black;
+@text-color:            @nv-white;
 
 // Links
 // -------------------------
 
-@link-color:            @brand-primary;
+@link-color:            @nv-purple-light;//@brand-primary;
 @link-hover-color:      darken(@link-color, 15%);
 
 // Typography
@@ -116,9 +119,9 @@
 
 @btn-font-weight:                normal;
 
-@btn-default-color:              #333;
-@btn-default-bg:                 #fff;
-@btn-default-border:             #ccc;
+@btn-default-color:              @nv-white;//#333;
+@btn-default-bg:                 @nv-purple;//#fff;
+@btn-default-border:             @nv-purple-light;//#ccc;
 
 @btn-primary-color:              #fff;
 @btn-primary-bg:                 @brand-primary;
@@ -366,8 +369,8 @@
 // -------------------------
 
 @jumbotron-padding:              30px;
-@jumbotron-color:                inherit;
-@jumbotron-bg:                   @gray-lighter;
+@jumbotron-color:                @nv-white;
+@jumbotron-bg:                   @nv-purple-darker;
 @jumbotron-heading-color:        inherit;
 @jumbotron-font-size:            ceil(@font-size-base * 1.5);
 
@@ -544,7 +547,7 @@
 
 // Wells
 // -------------------------
-@well-bg:                     #f5f5f5;
+@well-bg:                     darken(@nv-purple-dark, 15%);//#f5f5f5;
 
 
 // Badges
