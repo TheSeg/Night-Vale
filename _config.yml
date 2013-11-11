@@ -4,4 +4,14 @@ markdown:  redcarpet
 permalink: pretty
 pygments:  true
 timezone: America/Los_Angeles
-exclude: ["README.md","bower.json","package.json","LICENSE.md","node_modules","vendor","Gruntfile.js","Gemfile*"]
+encoding: UTF-8
+exclude: [
+  "README.md",
+  "bower.json",
+  "package.json",
+  "LICENSE.md",
+  "node_modules",
+  "vendor",
+  "Gruntfile.js",
+  "Gemfile*"
+]
