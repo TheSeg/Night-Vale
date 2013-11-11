@@ -1,20 +1,21 @@
 {
-    "name": "welcome-to-night-vale-game-about-you",
-    "version": "0.0.1",
-    "author": "John 'Seg' Seggerson <seg@segonmedia.com>",
-    "homepage": "http://nightvale.segonmedia.com/",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/TheSeg/Night-Vale"
-    },
-    "devDependencies": {
-        "grunt": "~0.4.1",
-        "grunt-contrib-concat": "~0.3.0",
-        "grunt-contrib-copy": "~0.4.1",
-        "grunt-contrib-imagemin": "~0.3.0",
-        "grunt-contrib-jshint": "~0.7.1",
-        "grunt-contrib-less": "~0.8.1",
-        "grunt-contrib-uglify": "~0.2.5",
-        "grunt-contrib-watch": "~0.5.3"
-    }
+  "name": "welcome-to-night-vale-game-about-you",
+  "version": "0.0.1",
+  "author": "John 'Seg' Seggerson <seg@segonmedia.com>",
+  "homepage": "http://nightvale.segonmedia.com/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TheSeg/Night-Vale"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-imagemin": "~0.3.0",
+    "grunt-contrib-jshint": "~0.7.1",
+    "grunt-contrib-less": "~0.8.1",
+    "grunt-contrib-uglify": "~0.2.5",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-svgmin": "~0.2.1"
+  }
 }
