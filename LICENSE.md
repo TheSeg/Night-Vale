@@ -13,4 +13,3 @@ Created by Joseph Fink and Jeffrey Cranor.
 Narrated by Cecil Baldwin.
 Music by [Disparition](http://www.disparition.info/).
 Original Logo by Rob Wilson.
-
