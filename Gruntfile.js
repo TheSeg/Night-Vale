@@ -9,6 +9,8 @@ module.exports = function(grunt) {
     dirs: {
       js_dist: "js",
       js_src: "_js_src",
+      img_dist: "img",
+      img_src: "_img_src",
       less: "_less",
       css: "css",
       bower_components: "_bower_components",
@@ -139,6 +141,19 @@ module.exports = function(grunt) {
         nonull: true,
       }
     },
+    imagemin: {
+      dynamic: {
+        options: {
+          optimizationLevel:3,
+        },
+        files: [{
+          expand:true,
+          cwd: '<%= dirs.img_src %>',
+          src: ['**/*.{png,jpg,gif}'],
+          dest: '<%= dirs.img_dist %>',
+        }],
+      },
+    },
     watch: {
       js: {
         files: [
@@ -149,6 +164,20 @@ module.exports = function(grunt) {
       less: {
         files: "<%= dirs.less %>/*.less",
         tasks: [ "less:production" ],
+      },
+      img: {
+        files: ["<%= dirs.img_src %>**/*.{png,jpg,gif}"],
+        tasks: [ "imagemin:dynamic" ],
+      },
+    },
+    jekyll: {
+      options: {
+        safe:true,
+        bundleExec:true,
+      },
+      server: {
+        serve: true,
+        auto: true,
       },
     },
   });
@@ -161,6 +190,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-svgmin');
+  grunt.loadNpmTasks('grunt-jekyll');
   
   // Inital Setup Task
   grunt.registerTask( 'init', [ 'init' , 'build' ] );
