@@ -225,6 +225,10 @@ module.exports = function(grunt) {
         files: ["<%= dirs.img_src %>**/*.{png,jpg,gif}"],
         tasks: [ "imagemin:dynamic" ],
       },
+      svg: {
+        files: [ "<%= dirs.img_src %>**/*.svg" ],
+        tasks: [ "svgmin:dist" ],
+      },
     },
     jekyll: {
       options: {
