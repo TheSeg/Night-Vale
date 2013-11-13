@@ -20,21 +20,39 @@
     position:absolute;
   }
   
-  .nv-logo-eyemoon {
-    .nv-logo-common;
-    top:20px;
-    left:40px;
-    height:136px;
-    width:402px;
-    outline:1px solid red;
-  }
+  .nv-logo-area {
+    .nv-logo-eyemoon {
+      .nv-logo-common;
+      top:20px;
+      left:40px;
+      height:136px;
+      width:402px;
+      outline:1px solid red;
+    }
   
-  .nv-logo-house {
-    .nv-logo-common;
-    bottom:14pt;
-    left:50px;
-    width:400px;
-    outline:1px solid blue;
+    .nv-logo-house {
+      .nv-logo-common;
+      bottom:14pt;
+      left:50px;
+      width:400px;
+      outline:1px solid blue;
+    }
+  
+    .nv-logo-pollbase {
+      .nv-logo-common;
+      bottom:0;
+      right:450px;
+      height: ( @nv-logo-height - 20px );
+      outline:1px solid yellow;
+    }
+  
+    .nv-logo-watertower {
+      .nv-logo-common;
+      bottom:0;
+      right:250px;
+      height: ( @nv-logo-height * .9 );
+      outline:1px solid green;
+    }
   }
   
   .nv-logo-title {
@@ -47,4 +65,5 @@
     font-size:@nv-logo-title-size;
     text-align:center;
   }
+  
 }
