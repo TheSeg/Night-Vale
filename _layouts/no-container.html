@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>{% include head.html %}</head>
+<body>
+<div id='fb-root'></div>
+{{ content }}
+<div class="container">
+  {% include footer.html %}
+</div>
+{% include post-javascript.html %}
+</body>
+</html>
+<!-- Generated: {{ site.time | date: "%m/%d/%Y %T" }} -->
