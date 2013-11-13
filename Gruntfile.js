@@ -63,6 +63,21 @@ module.exports = function(grunt) {
           "<%= dirs.css %>/nvgay-logo.min.css": "<%= dirs.less %>/nvgay-logo.less",
         },
       },
+      fonts: {
+        options: {
+          stripBanners: true,
+          compress: true,
+          cleancss: true,
+          sourceMap: true,
+          yuicompress: true,
+          paths: [
+            "<%= dirs.less %>",
+          ],
+        },
+        files: {
+          "<%= dirs.css %>/font-bignoodletitling.min.css": "<%= dirs.less %>/font-bignoodletitling.less",
+        },
+      },
     },
     concat: {
       options: {
@@ -201,6 +216,10 @@ module.exports = function(grunt) {
       less_logo: {
         files: "<%= dirs.less %>/nvgay-logo.less",
         tasks: [ "less:logo" ],
+      },
+      less_fonts: {
+        files: "<%= dirs.less %>/font-*.less",
+        tasks: [ "less:fonts" ],
       },
       img: {
         files: ["<%= dirs.img_src %>**/*.{png,jpg,gif}"],
