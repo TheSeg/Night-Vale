@@ -37,7 +37,7 @@ module.exports = function(grunt) {
           stripBanners: true,
           compress: true,
           cleancss: true,
-          sourceMap: true,
+          sourceMap: false,
           yuicompress: true,
           paths: [
             "<%= dirs.bs.less %>",
@@ -53,7 +53,7 @@ module.exports = function(grunt) {
           stripBanners: true,
           compress: true,
           cleancss: true,
-          sourceMap: true,
+          sourceMap: false,
           yuicompress: true,
           paths: [
             "<%= dirs.less %>",
@@ -68,7 +68,7 @@ module.exports = function(grunt) {
           stripBanners: true,
           compress: true,
           cleancss: true,
-          sourceMap: true,
+          sourceMap: false,
           yuicompress: true,
           paths: [
             "<%= dirs.less %>",
