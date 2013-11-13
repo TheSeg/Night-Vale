@@ -154,6 +154,20 @@ module.exports = function(grunt) {
         }],
       },
     },
+    svgmin: {
+      options: {
+        
+      },
+      dist: {
+        files: [{
+          expand: true,
+          cwd: '<%= dirs.img_src %>',
+          src: ['**/*.svg'],
+          dest: '<%= dirs.img_dist %>',
+          ext: '.min.svg',
+        }],
+      },
+    },
     watch: {
       js: {
         files: [
