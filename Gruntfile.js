@@ -32,7 +32,7 @@ module.exports = function(grunt) {
       },
     },
     less: {
-      production: {
+      bootstrap: {
         options: {
           stripBanners: true,
           compress: true,
@@ -46,6 +46,36 @@ module.exports = function(grunt) {
         },
         files: {
           "<%= dirs.css %>/nvgay.min.css": "<%= dirs.less %>/nvgay-core.less",
+        },
+      },
+      logo: {
+        options: {
+          stripBanners: true,
+          compress: true,
+          cleancss: true,
+          sourceMap: true,
+          yuicompress: true,
+          paths: [
+            "<%= dirs.less %>",
+          ],
+        },
+        files: {
+          "<%= dirs.css %>/nvgay-logo.min.css": "<%= dirs.less %>/nvgay-logo.less",
+        },
+      },
+      fonts: {
+        options: {
+          stripBanners: true,
+          compress: true,
+          cleancss: true,
+          sourceMap: true,
+          yuicompress: true,
+          paths: [
+            "<%= dirs.less %>",
+          ],
+        },
+        files: {
+          "<%= dirs.css %>/font-bignoodletitling.min.css": "<%= dirs.less %>/font-bignoodletitling.less",
         },
       },
     },
@@ -154,6 +184,20 @@ module.exports = function(grunt) {
         }],
       },
     },
+    svgmin: {
+      options: {
+        
+      },
+      dist: {
+        files: [{
+          expand: true,
+          cwd: '<%= dirs.img_src %>',
+          src: ['**/*.svg'],
+          dest: '<%= dirs.img_dist %>',
+          ext: '.min.svg',
+        }],
+      },
+    },
     watch: {
       js: {
         files: [
@@ -161,9 +205,21 @@ module.exports = function(grunt) {
         ],
         tasks: [ "concat:custom", "uglify:custom" ],
       },
-      less: {
-        files: "<%= dirs.less %>/*.less",
-        tasks: [ "less:production" ],
+      less_bs: {
+        files: [
+          "<%= dirs.less %>/nvgay-core.less",
+          "<%= dirs.less %>/nvgay-variables.less",
+          "<%= dirs.less %>/bootstrap-core.less",
+        ],
+        tasks: [ "less:bootstrap" ],
+      },
+      less_logo: {
+        files: "<%= dirs.less %>/nvgay-logo.less",
+        tasks: [ "less:logo" ],
+      },
+      less_fonts: {
+        files: "<%= dirs.less %>/font-*.less",
+        tasks: [ "less:fonts" ],
       },
       img: {
         files: ["<%= dirs.img_src %>**/*.{png,jpg,gif}"],
