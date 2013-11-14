@@ -199,6 +199,9 @@ module.exports = function(grunt) {
       },
     },
     watch: {
+      options: {
+        spawn: false,
+      },
       js: {
         files: [
           "<%= dirs.js_src %>/*.js"
@@ -225,9 +228,9 @@ module.exports = function(grunt) {
         files: ["<%= dirs.img_src %>**/*.{png,jpg,gif}"],
         tasks: [ "imagemin:dynamic" ],
       },
-      svg: {
-        files: [ "<%= dirs.img_src %>**/*.svg" ],
-        tasks: [ "svgmin:dist" ],
+      svg_process: {
+        files: "<%= dirs.img_src %>/night-vale-logo/*.svg",
+        tasks: [ "svgmin" ],
       },
     },
     jekyll: {
@@ -255,6 +258,9 @@ module.exports = function(grunt) {
   
   // Inital Setup Task
   grunt.registerTask( 'init', [ 'init' , 'build' ] );
+  
+  // SVG Alias
+  grunt.registerTask( 'svg' , [ 'svgmin' ] );
   
   // Build Task
   grunt.registerTask( 'build' , [ 'copy' , 'concat' , 'svgmin' , 'less' , 'uglify' ] );

@@ -12,6 +12,7 @@
 #nv-logo-banner {
   background-color:@nv-purple-light;
   width:100%;
+  overflow:hidden;
   
   .nv-logo-common {
     position:absolute;
@@ -25,14 +26,13 @@
   .nv-logo-area {
     position:relative;
     height:@nv-logo-height;
-    //outline:1px dashed gray;
     
     .nv-logo-eyemoon {
       .nv-logo-common;
       .nv-logo-common-img('night-vale-logo/nv-logo-eyemoon.min.svg', center top);
       
       top:120px;
-      right:35%;
+      left:20%;
       width:530px;
       height:200px;
       z-index:1;
@@ -54,7 +54,7 @@
       .nv-logo-common-img('night-vale-logo/nv-logo-pollbase.min.svg');
       
       bottom:0;
-      right:39%;
+      left:45.8%;
 
       width:180px;
       height:(@nv-logo-height - 10px);
@@ -66,22 +66,45 @@
       .nv-logo-common-img('night-vale-logo/nv-logo-watertower.min.svg');
       
       bottom:-2px;
-      right:28%;
+      left:59%;
+      
       width:150px;
       height:290px;
       z-index:3;
     }
+    
+    .nv-logo-powerlines {
+      .nv-logo-common;
+      
+      width:100%;
+      height:60%;
+      
+      top:45px;
+      left:46.5%;
+      z-index:5;
+    }
+  
   }
   
   .nv-logo-title {
     font-family: 'BigNoodleTitling', sans-serif;
-
-    background-color:@nv-black;
     
+    padding:8px 0;
+    background-color:@nv-black;
     color:@nv-white;
     font-size:@nv-logo-title-size;
     text-align:center;
     letter-spacing:2pt;
+    line-height:1;
+    
+    .title-main {
+      
+    }
+    .title-sub {
+      color:@nv-gray;
+      font-size:( @nv-logo-title-size - 10pt );
+    }
+    
   }
   
 }
