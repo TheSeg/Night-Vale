@@ -37,7 +37,7 @@ module.exports = function(grunt) {
           stripBanners: true,
           compress: true,
           cleancss: true,
-          sourceMap: true,
+          sourceMap: false,
           yuicompress: true,
           paths: [
             "<%= dirs.bs.less %>",
@@ -53,7 +53,7 @@ module.exports = function(grunt) {
           stripBanners: true,
           compress: true,
           cleancss: true,
-          sourceMap: true,
+          sourceMap: false,
           yuicompress: true,
           paths: [
             "<%= dirs.less %>",
@@ -68,7 +68,7 @@ module.exports = function(grunt) {
           stripBanners: true,
           compress: true,
           cleancss: true,
-          sourceMap: true,
+          sourceMap: false,
           yuicompress: true,
           paths: [
             "<%= dirs.less %>",
@@ -225,6 +225,10 @@ module.exports = function(grunt) {
         files: ["<%= dirs.img_src %>**/*.{png,jpg,gif}"],
         tasks: [ "imagemin:dynamic" ],
       },
+      svg: {
+        files: [ "<%= dirs.img_src %>**/*.svg" ],
+        tasks: [ "svgmin:dist" ],
+      },
     },
     jekyll: {
       options: {
@@ -253,7 +257,7 @@ module.exports = function(grunt) {
   grunt.registerTask( 'init', [ 'init' , 'build' ] );
   
   // Build Task
-  grunt.registerTask( 'build' , [ 'copy' , 'concat' , 'less' , 'uglify' ] );
+  grunt.registerTask( 'build' , [ 'copy' , 'concat' , 'svgmin' , 'less' , 'uglify' ] );
 
   // Default task(s).
   grunt.registerTask( 'default' , ['build'] );
