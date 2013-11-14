@@ -10,54 +10,75 @@
 @nv-logo-title-size:40pt;
 
 #nv-logo-banner {
-  position:relative;
   background-color:@nv-purple-light;
-  height:@nv-logo-height;
   width:100%;
   
   .nv-logo-common {
     position:absolute;
   }
+  .nv-logo-common-img(@img,@position:center bottom) {
+    // Make sure you include the image without root path!
+    background: url('@{images-path}@{img}') no-repeat @position;
+    background-size: contain;
+  }
   
   .nv-logo-area {
+    position:relative;
+    height:@nv-logo-height;
+    outline:1px dashed gray;
+    
     .nv-logo-eyemoon {
       .nv-logo-common;
+      .nv-logo-common-img('night-vale-logo/nv-logo-eyemoon.min.svg', center top);
+      
       top:20px;
       left:40px;
-      height:136px;
-      width:402px;
+      width:502px;
+      height:200px;
+      z-index:1;
+
       outline:1px solid red;
     }
   
     .nv-logo-house {
       .nv-logo-common;
-      bottom:14pt;
-      left:50px;
+      .nv-logo-common-img('night-vale-logo/nv-logo-house.min.svg');
+      
+      bottom:0;
+      left:3%;
       width:400px;
-      outline:1px solid blue;
+      height:200px;
+      z-index:2;
     }
   
     .nv-logo-pollbase {
       .nv-logo-common;
+      .nv-logo-common-img('night-vale-logo/nv-logo-pollbase.min.svg');
+      
       bottom:0;
       right:450px;
-      height: ( @nv-logo-height - 20px );
-      outline:1px solid yellow;
+
+      width:180px;
+      height:(@nv-logo-height - 25px);
+      z-index:4;
     }
   
     .nv-logo-watertower {
       .nv-logo-common;
+      .nv-logo-common-img('night-vale-logo/nv-logo-watertower.min.svg');
+      
       bottom:0;
       right:250px;
-      height: ( @nv-logo-height * .9 );
+      width:150px;
+      height: (@nv-logo-height - 150px);
+      z-index:3;
+
       outline:1px solid green;
     }
   }
   
   .nv-logo-title {
-    .nv-logo-common;
     font-family: 'BigNoodleTitling', sans-serif;
-    bottom:0;
     width:100%;
     height:(@nv-logo-title-size + 10pt);
     background-color:@nv-black;
