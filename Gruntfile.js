@@ -199,6 +199,9 @@ module.exports = function(grunt) {
       },
     },
     watch: {
+      options: {
+        spawn: false,
+      },
       js: {
         files: [
           "<%= dirs.js_src %>/*.js"
