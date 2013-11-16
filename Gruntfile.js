@@ -256,7 +256,7 @@ module.exports = function(grunt) {
   grunt.registerTask( 'svg' , [ 'svgmin' ] );
   
   // Build Task
-  grunt.registerTask( 'build' , [ 'copy' , 'concat' , 'svgmin' , 'less' , 'uglify' ] );
+  grunt.registerTask( 'build' , [ 'copy' , 'concat' , 'svgmin' , 'imagemin' , 'less' , 'uglify' ] );
 
   // Default task(s).
   grunt.registerTask( 'default' , ['build'] );
