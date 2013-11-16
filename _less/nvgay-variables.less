@@ -5,6 +5,7 @@
 // Welcome to Night Vale: Color Palette
 // --------------------------------------------------
 @nv-purple-light: #9A3B91;
+@nv-purple-lighter: lighten(@nv-purple-light, 20%);
 @nv-purple-dark: #692161;
 @nv-purple-darker: darken(@nv-purple-dark, 10%);
 @nv-purple-bg: darken(@nv-purple-dark, 15%);
@@ -625,9 +626,9 @@
 @text-muted:                  @gray-light;
 @abbr-border-color:           @gray-light;
 @headings-small-color:        @gray-light;
-@blockquote-small-color:      @gray-light;
-@blockquote-border-color:     @gray-lighter;
-@page-header-border-color:    @gray-lighter;
+@blockquote-small-color:      @nv-purple-lighter;//@gray-light;
+@blockquote-border-color:     @nv-purple-darker;//@gray-lighter;
+@page-header-border-color:    @gray-dark;//@gray-lighter;
 
 // Miscellaneous
 // -------------------------
