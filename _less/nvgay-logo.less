@@ -106,3 +106,24 @@
   }
   
 }
+
+#nv-logo-mini {
+  font-family: 'BigNoodleTitling', sans-serif;
+  letter-spacing:1.2pt;
+  background-image: url('@{images-path}night-vale-logo/nv-logo-watertower.min.svg'), url('@{images-path}night-vale-logo/nv-logo-eyemoon.min.svg');
+  background-repeat: no-repeat;
+  background-position: -2px 2px, 99% 4px;
+  background-size: auto 120px, auto 40px;
+  @media (max-width: @screen-xs-max) {
+    background-image: url('@{images-path}night-vale-logo/nv-logo-watertower.min.svg');
+    background-position: -2px 2px;
+    background-size: auto 120px;
+  }
+  
+  .navbar-brand {
+    text-shadow:2px 2px 5px #000;
+    .title-sub {
+      color:@nv-gray;
+    }
+  }
+}

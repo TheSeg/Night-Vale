@@ -5,6 +5,7 @@
 // Welcome to Night Vale: Color Palette
 // --------------------------------------------------
 @nv-purple-light: #9A3B91;
+@nv-purple-lighter: lighten(@nv-purple-light, 20%);
 @nv-purple-dark: #692161;
 @nv-purple-darker: darken(@nv-purple-dark, 10%);
 @nv-purple-bg: darken(@nv-purple-dark, 15%);
@@ -60,6 +61,8 @@
 @font-family-monospace:   Monaco, Menlo, Consolas, "Courier New", monospace;
 @font-family-base:        @font-family-sans-serif;
 
+@font-family-nv-main:     'BigNoodleTitling', sans-serif;
+
 @font-size-base:          16px;//14px;
 @font-size-large:         ceil(@font-size-base * 1.25); // ~18px
 @font-size-small:         ceil(@font-size-base * 0.85); // ~12px
@@ -74,7 +77,7 @@
 @line-height-base:        1.428571429; // 20/14
 @line-height-computed:    floor(@font-size-base * @line-height-base); // ~20px
 
-@headings-font-family:    @font-family-base;
+@headings-font-family:    @font-family-nv-main;//@font-family-base;
 @headings-font-weight:    500;
 @headings-line-height:    1.1;
 @headings-color:          inherit;
@@ -277,7 +280,7 @@
 @navbar-padding-vertical:          ((@navbar-height - @line-height-computed) / 2);
 
 @navbar-default-color:             #fff;//#777;
-@navbar-default-bg:                @nv-purple;//#f8f8f8;
+@navbar-default-bg:                @nv-purple-darker;//#f8f8f8;
 @navbar-default-border:            darken(@navbar-default-bg, 6.5%);
 
 // Navbar links
@@ -623,9 +626,9 @@
 @text-muted:                  @gray-light;
 @abbr-border-color:           @gray-light;
 @headings-small-color:        @gray-light;
-@blockquote-small-color:      @gray-light;
-@blockquote-border-color:     @gray-lighter;
-@page-header-border-color:    @gray-lighter;
+@blockquote-small-color:      @nv-purple-lighter;//@gray-light;
+@blockquote-border-color:     @nv-purple-darker;//@gray-lighter;
+@page-header-border-color:    @gray-dark;//@gray-lighter;
 
 // Miscellaneous
 // -------------------------
