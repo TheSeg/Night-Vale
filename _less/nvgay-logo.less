@@ -3,9 +3,6 @@
         Main Banner Logo
 */
 
-// Import common variables.
-@import "nvgay-variables.less";
-
 @nv-logo-height:500px;
 @nv-logo-title-size:40pt;
 
@@ -15,6 +12,7 @@
   overflow:hidden;
   
   .nv-logo-common {
+    .user-select(none);
     position:absolute;
   }
   .nv-logo-common-img(@img,@position:center bottom) {
