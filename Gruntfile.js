@@ -18,6 +18,8 @@ module.exports = function(grunt) {
         root: "<%= dirs.bower_components %>/bootstrap",
         js: "<%= dirs.bower_components %>/bootstrap/js",
         less: "<%= dirs.bower_components %>/bootstrap/less",
+        fonts: "<%= dirs.bower_components %>/bootstrap/fonts",
+        font: "<%= dirs.bower_components %>/bootstrap/fonts",
       },
       fa: "<%= dirs.bower_components %>/font-awesome",
       holderjs: "<%= dirs.bower_components %>/holderjs",
@@ -97,6 +99,17 @@ module.exports = function(grunt) {
     copy: {
       options: {
         stripBanners:true,
+      },
+      bootstrap: {
+        files: [
+          {
+            expand: true,
+            src: "<%= dirs.bs.fonts %>/*.*",
+            dest: "font/",
+            flatten: true,
+            filter: 'isFile',
+          },
+        ],
       },
       jquery: {
         files: [
