@@ -2,5 +2,5 @@
 windowTitle         = "$TM_DISPLAYNAME — Night Vale: The Game About You"
 
 # Excludes `_site` folder
-exclude             = "{$exclude,*.tmproj,_site}"
-excludeInFolderSearch = "{$excludeInFolderSearch,_site}"
+exclude             = "{$exclude,*.tmproj,_site,CNAME}"
+excludeInFolderSearch = "{$excludeInFolderSearch,_site,CNAME}"
