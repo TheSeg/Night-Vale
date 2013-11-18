@@ -5,8 +5,18 @@
 <div class="col-sm-{{include.colSize}} {% if include.offset > 0 %}col-sm-offset-{{include.offset}}{% endif %}">
 {% endif %}
 
-<div class="alert alert-danger">
-  <h4 class="text-center"><i class="fa fa-warning"></i> This is not an official work of Commonplace Books! <i class="fa fa-warning"></i></h4>
+<div class="nv-alert nv-alert-disclaimer alert alert-danger">
+  <h4 class="text-center">
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fa fa-warning fa-stack-1x fa-inverse"></i>
+    </span>
+    This is not an official work of Commonplace Books!
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fa fa-warning fa-stack-1x fa-inverse"></i>
+    </span>
+  </h4>
   <p>
     This game design proposal by <a href="http://theseg.github.io/" class="alert-link" target="_blank">John "Seg" Seggerson</a> is in no way affiliated with Commonplace Books, Welcome to Night Vale, or any of the production team.
     {% if page.path != "about.html" %}

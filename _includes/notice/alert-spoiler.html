@@ -1,0 +1,29 @@
+{% if include.addRow == true %}
+<div class="row">
+{% endif %}
+{% if include.colSize > 0 %}
+<div class="col-sm-{{include.colSize}} {% if include.offset > 0 %}col-sm-offset-{{include.offset}}{% endif %}">
+{% endif %}
+
+<div class="nv-alert nv-alert-spoilers alert alert-warning">
+  <h4 class="text-center">
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fa fa-info fa-stack-1x fa-inverse"></i>
+    </span>
+     Spoilers Abound! 
+     <span class="fa-stack fa-lg">
+       <i class="fa fa-circle fa-stack-2x"></i>
+       <i class="fa fa-info fa-stack-1x fa-inverse"></i>
+     </span>
+  </h4>
+  <p>
+    While the game won't require knowledge of the podcast to enjoy, this proposal does contain spoilers.
+  </p>
+</div>
+{% if include.colSize > 0 %}
+</div>
+{% endif %}
+{% if include.addRow == true %}
+</div>
+{% endif %}
