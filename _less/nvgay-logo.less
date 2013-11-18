@@ -126,4 +126,18 @@
       color:@nv-gray;
     }
   }
+  
+  .navbar-collapse {
+    @media (max-width: @screen-xs-max) {
+      background-color:@navbar-default-bg;
+      background-image:url('@{images-path}night-vale-logo/nv-logo-eyemoon.min.svg');
+      background-repeat: no-repeat;
+      background-position: 90% 90%;
+      background-size: auto 60px;
+      &.navbar-inverse {
+        background-color:@navbar-inverse-bg;
+      }
+    }
+  }
+  
 }
