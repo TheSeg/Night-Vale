@@ -196,6 +196,20 @@ module.exports = function(grunt) {
         }],
       },
     },
+    favicons: {
+      options: {
+        html: "_includes/head-icons.html",
+        HTMLPrefix: "{{site.baseurl}}img/icons/",
+        trueColor: true,
+        appleTouchBackgroundColor:"#692161",
+        coast:true,
+        tileBlackWhite:false,
+      },
+      icons: {
+        src: "<%= dirs.img_src %>/source.favicon.png",
+        dest: "<%= dirs.img_dist %>/icons",
+      },
+    },
     watch: {
       options: {
         spawn: false,
