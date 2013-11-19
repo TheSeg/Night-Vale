@@ -265,7 +265,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-favicons');
   
   // Inital Setup Task
-  grunt.registerTask( 'init', [ 'init' , 'build' ] );
+  grunt.registerTask( 'init', [ 'init' , 'build' , 'favicons' ] );
   
   // SVG Alias
   grunt.registerTask( 'svg' , [ 'svgmin' ] );
