@@ -232,11 +232,17 @@ module.exports = function(grunt) {
         tasks: [ "less:fonts" ],
       },
       img: {
-        files: ["<%= dirs.img_src %>**/*.{png,jpg,gif}"],
+        options: {
+          cwd: "<%= dirs.img_src %>",
+        },
+        files: ["**/*.{png,jpg,gif}"],
         tasks: [ "imagemin:dynamic" ],
       },
       svg_process: {
-        files: "<%= dirs.img_src %>/night-vale-logo/*.svg",
+        options: {
+          cwd: "<%= dirs.img_src %>",
+        },
+        files: [ "**/*.svg" ],
         tasks: [ "svgmin" ],
       },
     },
