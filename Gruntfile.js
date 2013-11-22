@@ -124,9 +124,24 @@ module.exports = function(grunt) {
         ],
       },
       colorbox: {
-        src: "<%= dirs.colorbox %>/jquery.colorbox-min.js",
-        dest: "<%= dirs.js_dist %>/jquery.colorbox-min.js",
+        files: [
+          {
+            src: "<%= dirs.colorbox %>/jquery.colorbox-min.js",
+            dest: "<%= dirs.js_dist %>/jquery.colorbox-min.js",
+          },
+          {
+            expand:true,
+            src: "<%= dirs.colorbox %>/example3/images/*.{png,gif}",
+            dest: "<%= dirs.img_src %>/",
+            flatten: true,
+            filter: 'isFile',
+          },
+        ],
       },
+        files: [{
+          src: "<%= dirs.colorbox %>/jquery.colorbox-min.js",
+          dest: "<%= dirs.js_dist %>/jquery.colorbox-min.js",
+        }],
       html5shiv: {
         src: "<%= dirs.html5shiv %>/src/html5shiv.js",
         dest: "<%= dirs.js_dist %>/html5shiv.js",
