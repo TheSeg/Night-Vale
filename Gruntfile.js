@@ -25,6 +25,7 @@ module.exports = function(grunt) {
       holderjs: "<%= dirs.bower_components %>/holderjs",
       html5shiv: "<%= dirs.bower_components %>/html5shiv/dist",
       jquery: "<%= dirs.bower_components %>/jquery",
+      colorbox: "<%= dirs.bower_components %>/jquery-colorbox",
       respond: "<%= dirs.brower_components %>/respond",
     },
     // Config Tasks
@@ -122,6 +123,25 @@ module.exports = function(grunt) {
           },
         ],
       },
+      colorbox: {
+        files: [
+          {
+            src: "<%= dirs.colorbox %>/jquery.colorbox-min.js",
+            dest: "<%= dirs.js_dist %>/jquery.colorbox-min.js",
+          },
+          {
+            expand:true,
+            src: "<%= dirs.colorbox %>/example3/images/*.{png,gif}",
+            dest: "<%= dirs.img_src %>/",
+            flatten: true,
+            filter: 'isFile',
+          },
+        ],
+      },
+        files: [{
+          src: "<%= dirs.colorbox %>/jquery.colorbox-min.js",
+          dest: "<%= dirs.js_dist %>/jquery.colorbox-min.js",
+        }],
       html5shiv: {
         src: "<%= dirs.html5shiv %>/src/html5shiv.js",
         dest: "<%= dirs.js_dist %>/html5shiv.js",
