@@ -216,10 +216,12 @@ module.exports = function(grunt) {
       options: {
         html: "_includes/head-icons.html",
         HTMLPrefix: "{{site.baseurl}}img/icons/",
+        precomposed: false,
         trueColor: true,
         appleTouchBackgroundColor:"#692161",
         coast:true,
         tileBlackWhite:false,
+        tileColor:"#692161",
       },
       icons: {
         src: "<%= dirs.img_src %>/source.favicon.png",
