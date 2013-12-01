@@ -4,3 +4,6 @@ windowTitle         = "$TM_DISPLAYNAME — Night Vale: The Game About You"
 # Excludes `_site` folder
 exclude             = "{$exclude,*.tmproj,_site,CNAME}"
 excludeInFolderSearch = "{$excludeInFolderSearch,_site,CNAME}"
+
+# Includes 
+include             = "{$include,.ruby-version}"
