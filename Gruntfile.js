@@ -66,6 +66,21 @@ module.exports = function(grunt) {
           "<%= dirs.css %>/font-bignoodletitling.min.css": "<%= dirs.less %>/font-bignoodletitling.less",
         },
       },
+      font_awesome: {
+        options: {
+          stripBanners: true,
+          compress: true,
+          cleancss: true,
+          sourceMap: false,
+          yuicompress: true,
+          paths: [
+            "<%= dirs.fa %>/less",
+          ],
+        },
+        files: {
+          "<%= dirs.css %>/font-awesome.min.css": "<%= dirs.less %>/font-awesome.less"
+        },
+      },
     },
     concat: {
       options: {
@@ -216,10 +231,12 @@ module.exports = function(grunt) {
       options: {
         html: "_includes/head-icons.html",
         HTMLPrefix: "{{site.baseurl}}img/icons/",
+        precomposed: false,
         trueColor: true,
         appleTouchBackgroundColor:"#692161",
         coast:true,
         tileBlackWhite:false,
+        tileColor:"#692161",
       },
       icons: {
         src: "<%= dirs.img_src %>/source.favicon.png",
@@ -245,7 +262,7 @@ module.exports = function(grunt) {
       },
       less_fonts: {
         files: "<%= dirs.less %>/font-*.less",
-        tasks: [ "less:fonts" ],
+        tasks: [ "less:fonts" , "less:font_awesome" ],
       },
       img: {
         options: {
