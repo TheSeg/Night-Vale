@@ -180,6 +180,17 @@ module.exports = function(grunt) {
         ],
       },
     },
+    jshint: {
+      options: {
+        browser: true,
+        globals: {
+          jQuery: true,
+        }
+      },
+      all: [
+        '<%= dirs.js_src %>/*.js'
+      ]
+    },
     uglify: {
       options: {
         stripBanners: true,
@@ -251,7 +262,7 @@ module.exports = function(grunt) {
         files: [
           "<%= dirs.js_src %>/*.js"
         ],
-        tasks: [ "concat:custom", "uglify:custom" ],
+        tasks: [ "jshint:all" , "concat:custom", "uglify:custom" ],
       },
       less_bs: {
         files: [
@@ -310,7 +321,11 @@ module.exports = function(grunt) {
   grunt.registerTask( 'svg' , [ 'svgmin' ] );
   
   // Build Task
-  grunt.registerTask( 'build' , [ 'copy' , 'concat' , 'svgmin' , 'imagemin' , 'less' , 'uglify' ] );
+  grunt.registerTask( 'build' , [ 'copy' , 'jshint' , 'concat' , 'svgmin' , 'imagemin' , 'less' , 'uglify' ] );
+  
+  // favicons Alias
+  grunt.registerTask( 'icon' , [ 'favicons' ] );
+  grunt.registerTask( 'icons' , [ 'favicons' ] );
 
   // Default task(s).
   grunt.registerTask( 'default' , ['build'] );
