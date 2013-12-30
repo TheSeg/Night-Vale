@@ -311,6 +311,10 @@ module.exports = function(grunt) {
   
   // Build Task
   grunt.registerTask( 'build' , [ 'copy' , 'concat' , 'svgmin' , 'imagemin' , 'less' , 'uglify' ] );
+  
+  // favicons Alias
+  grunt.registerTask( 'icon' , [ 'favicons' ] );
+  grunt.registerTask( 'icons' , [ 'favicons' ] );
 
   // Default task(s).
   grunt.registerTask( 'default' , ['build'] );

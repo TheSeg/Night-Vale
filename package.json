@@ -18,6 +18,6 @@
     "grunt-contrib-watch": "~0.5",
     "grunt-svgmin": "~0.3",
     "grunt-jekyll": "~0.4",
-    "grunt-favicons": "~0.5"
+    "grunt-favicons": "~0.6.0"
   }
 }
