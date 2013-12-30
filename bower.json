@@ -18,6 +18,6 @@
         "jquery-colorbox": "^1.4.33"
     },
     "devDependencies": {
-        "grunt": "~0.4.1"
+        "grunt": "~0.4.2"
     }
 }
