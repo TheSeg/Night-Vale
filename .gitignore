@@ -9,4 +9,3 @@ _site/
 # Package Managers & Modules
 node_modules/
 _bower_components/
-Gemfile.lock
