@@ -328,6 +328,6 @@ module.exports = function(grunt) {
   grunt.registerTask( 'icons' , [ 'favicons' ] );
 
   // Default task(s).
-  grunt.registerTask( 'default' , ['build'] );
+  grunt.registerTask( 'default' , ['build' , 'watch'] );
   
 };
