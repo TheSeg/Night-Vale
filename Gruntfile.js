@@ -189,7 +189,10 @@ module.exports = function(grunt) {
       },
       all: [
         '<%= dirs.js_src %>/*.js'
-      ]
+      ],
+      gruntfile: [
+        'gruntfile.js'
+      ],
     },
     uglify: {
       options: {
@@ -211,6 +214,7 @@ module.exports = function(grunt) {
         nonull: true,
       }
     },
+    
     imagemin: {
       dynamic: {
         options: {
@@ -224,6 +228,7 @@ module.exports = function(grunt) {
         }],
       },
     },
+    
     svgmin: {
       options: {
         
@@ -254,9 +259,14 @@ module.exports = function(grunt) {
         dest: "<%= dirs.img_dist %>/icons",
       },
     },
+    
     watch: {
       options: {
         spawn: false,
+      },
+      gruntfile: {
+        files: 'Gruntfile.js',
+        tasks: 'jshint:gruntfile',
       },
       js: {
         files: [
