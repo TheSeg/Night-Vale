@@ -290,16 +290,6 @@ module.exports = function(grunt) {
         tasks: [ "svgmin" ],
       },
     },
-    jekyll: {
-      options: {
-        safe:true,
-        bundleExec:true,
-      },
-      server: {
-        serve: true,
-        auto: true,
-      },
-    },
   });
   
   // Load the plugins for tasks.
@@ -311,7 +301,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-svgmin');
-  grunt.loadNpmTasks('grunt-jekyll');
   grunt.loadNpmTasks('grunt-favicons');
   
   // Inital Setup Task
