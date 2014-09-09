@@ -1,3 +1,6 @@
+site: [
+  baseurl = /
+]
 lsi: false
 markdown:  redcarpet
 permalink: pretty
