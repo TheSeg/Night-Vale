@@ -189,7 +189,10 @@ module.exports = function(grunt) {
       },
       all: [
         '<%= dirs.js_src %>/*.js'
-      ]
+      ],
+      gruntfile: [
+        'gruntfile.js'
+      ],
     },
     uglify: {
       options: {
@@ -211,6 +214,7 @@ module.exports = function(grunt) {
         nonull: true,
       }
     },
+    
     imagemin: {
       dynamic: {
         options: {
@@ -224,6 +228,7 @@ module.exports = function(grunt) {
         }],
       },
     },
+    
     svgmin: {
       options: {
         
@@ -254,9 +259,14 @@ module.exports = function(grunt) {
         dest: "<%= dirs.img_dist %>/icons",
       },
     },
+    
     watch: {
       options: {
         spawn: false,
+      },
+      gruntfile: {
+        files: 'Gruntfile.js',
+        tasks: 'jshint:gruntfile',
       },
       js: {
         files: [
@@ -290,16 +300,6 @@ module.exports = function(grunt) {
         tasks: [ "svgmin" ],
       },
     },
-    jekyll: {
-      options: {
-        safe:true,
-        bundleExec:true,
-      },
-      server: {
-        serve: true,
-        auto: true,
-      },
-    },
   });
   
   // Load the plugins for tasks.
@@ -311,7 +311,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-svgmin');
-  grunt.loadNpmTasks('grunt-jekyll');
   grunt.loadNpmTasks('grunt-favicons');
   
   // Inital Setup Task
