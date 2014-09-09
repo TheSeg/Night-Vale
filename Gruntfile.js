@@ -246,7 +246,7 @@ module.exports = function(grunt) {
     favicons: {
       options: {
         html: "_includes/head-icons.html",
-        HTMLPrefix: "{{site.baseurl}}img/icons/",
+        HTMLPrefix: "{{site.baseurl}}/img/icons/",
         precomposed: false,
         trueColor: true,
         appleTouchBackgroundColor:"#692161",
