@@ -9,13 +9,13 @@
         "url": "http://theseg.github.io"
     },
     "dependencies": {
-        "jquery": "~2.1.1",
-        "font-awesome": "~4.2.0",
-        "holderjs": "~2.4.0",
-        "html5shiv": "~3.7.2",
-        "bootstrap": "~3.1.1",
+        "jquery": "~2.1.4",
+        "font-awesome": "~4.5.0",
+        "holderjs": "~2.9.0",
+        "html5shiv": "~3.7.3",
+        "bootstrap": "~3.3.6",
         "respond": "~1.4.2",
-        "jquery-colorbox": "~1.5.13"
+        "jquery-colorbox": "~1.6.3"
     },
     "devDependencies": {
         "grunt": "~0.4.5"
