@@ -1,33 +1,34 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
-          '<%= grunt.template.today("yyyy-mm-dd") %>\n',
+        '<%= grunt.template.today(\'yyyy-mm-dd\') %>\n',
     meta: {
-      version: '0.0.1'
+      version: '0.0.1',
     },
     dirs: {
-      js_dist: "js",
-      js_src: "_js_src",
-      img_dist: "img",
-      img_src: "_img_src",
-      less: "_less",
-      css: "css",
-      bower_components: "_bower_components",
+      js_dist: 'js',
+      js_src: '_js_src',
+      img_dist: 'img',
+      img_src: '_img_src',
+      less: '_less',
+      css: 'css',
+      bower_components: '_bower_components',
       bs: {
-        root: "<%= dirs.bower_components %>/bootstrap",
-        js: "<%= dirs.bower_components %>/bootstrap/js",
-        less: "<%= dirs.bower_components %>/bootstrap/less",
-        fonts: "<%= dirs.bower_components %>/bootstrap/fonts",
-        font: "<%= dirs.bower_components %>/bootstrap/fonts",
+        root: '<%= dirs.bower_components %>/bootstrap',
+        js: '<%= dirs.bower_components %>/bootstrap/js',
+        less: '<%= dirs.bower_components %>/bootstrap/less',
+        fonts: '<%= dirs.bower_components %>/bootstrap/fonts',
+        font: '<%= dirs.bower_components %>/bootstrap/fonts',
       },
-      fa: "<%= dirs.bower_components %>/font-awesome",
-      holderjs: "<%= dirs.bower_components %>/holderjs",
-      html5shiv: "<%= dirs.bower_components %>/html5shiv/dist",
-      jquery: "<%= dirs.bower_components %>/jquery",
-      colorbox: "<%= dirs.bower_components %>/jquery-colorbox",
-      respond: "<%= dirs.brower_components %>/respond",
+      fa: '<%= dirs.bower_components %>/font-awesome',
+      holderjs: '<%= dirs.bower_components %>/holderjs',
+      html5shiv: '<%= dirs.bower_components %>/html5shiv/dist',
+      jquery: '<%= dirs.bower_components %>/jquery',
+      colorbox: '<%= dirs.bower_components %>/jquery-colorbox',
+      respond: '<%= dirs.brower_components %>/respond',
     },
+
     // Config Tasks
     init: {
       options: {
@@ -43,12 +44,12 @@ module.exports = function(grunt) {
           sourceMap: false,
           yuicompress: true,
           paths: [
-            "<%= dirs.bs.less %>",
-            "<%= dirs.less %>",
+            '<%= dirs.bs.less %>',
+            '<%= dirs.less %>',
           ],
         },
         files: {
-          "<%= dirs.css %>/nvgay.min.css": "<%= dirs.less %>/nvgay-core.less",
+          '<%= dirs.css %>/nvgay.min.css': '<%= dirs.less %>/nvgay-core.less',
         },
       },
       fonts: {
@@ -59,11 +60,11 @@ module.exports = function(grunt) {
           sourceMap: false,
           yuicompress: true,
           paths: [
-            "<%= dirs.less %>",
+            '<%= dirs.less %>',
           ],
         },
         files: {
-          "<%= dirs.css %>/font-bignoodletitling.min.css": "<%= dirs.less %>/font-bignoodletitling.less",
+          '<%= dirs.css %>/font-bignoodletitling.min.css': '<%= dirs.less %>/font-bignoodletitling.less',
         },
       },
       font_awesome: {
@@ -74,11 +75,11 @@ module.exports = function(grunt) {
           sourceMap: false,
           yuicompress: true,
           paths: [
-            "<%= dirs.fa %>/less",
+            '<%= dirs.fa %>/less',
           ],
         },
         files: {
-          "<%= dirs.css %>/font-awesome.min.css": "<%= dirs.less %>/font-awesome.less"
+          '<%= dirs.css %>/font-awesome.min.css': '<%= dirs.less %>/font-awesome.less',
         },
       },
     },
@@ -99,29 +100,31 @@ module.exports = function(grunt) {
           '<%= dirs.bs.root %>/js/popover.js',
           '<%= dirs.bs.root %>/js/scrollspy.js',
           '<%= dirs.bs.root %>/js/tab.js',
-          '<%= dirs.bs.root %>/js/affix.js'
+          '<%= dirs.bs.root %>/js/affix.js',
         ],
-        dest:"<%= dirs.js_dist %>/bootstrap.js",
+        dest: '<%= dirs.js_dist %>/bootstrap.js',
         nonull: true,
       },
+
       custom: {
         src: [
           '<%= dirs.js_src %>/*.js',
         ],
-        dest:"<%= dirs.js_dist %>/nvgay.js",
+        dest: '<%= dirs.js_dist %>/nvgay.js',
         nonull: true,
-      }
+      },
+
     },
     copy: {
       options: {
-        stripBanners:true,
+        stripBanners: true,
       },
       bootstrap: {
         files: [
           {
             expand: true,
-            src: "<%= dirs.bs.fonts %>/*.*",
-            dest: "font/",
+            src: '<%= dirs.bs.fonts %>/*.*',
+            dest: 'font/',
             flatten: true,
             filter: 'isFile',
           },
@@ -131,8 +134,8 @@ module.exports = function(grunt) {
         files: [
           {
             expand: true,
-            src: "<%= dirs.jquery %>/jquery.*",
-            dest: "<%= dirs.js_dist %>/",
+            src: '<%= dirs.jquery %>/jquery.*',
+            dest: '<%= dirs.js_dist %>/',
             flatten: true,
             filter: 'isFile',
           },
@@ -141,40 +144,40 @@ module.exports = function(grunt) {
       colorbox: {
         files: [
           {
-            src: "<%= dirs.colorbox %>/jquery.colorbox-min.js",
-            dest: "<%= dirs.js_dist %>/jquery.colorbox-min.js",
+            src: '<%= dirs.colorbox %>/jquery.colorbox-min.js',
+            dest: '<%= dirs.js_dist %>/jquery.colorbox-min.js',
           },
           {
-            expand:true,
-            src: "<%= dirs.colorbox %>/example3/images/*.{png,gif}",
-            dest: "<%= dirs.img_src %>/",
+            expand: true,
+            src: '<%= dirs.colorbox %>/example3/images/*.{png,gif}',
+            dest: '<%= dirs.img_src %>/',
             flatten: true,
             filter: 'isFile',
           },
         ],
       },
       html5shiv: {
-        src: "<%= dirs.html5shiv %>/src/html5shiv.js",
-        dest: "<%= dirs.js_dist %>/html5shiv.js",
+        src: '<%= dirs.html5shiv %>/src/html5shiv.js',
+        dest: '<%= dirs.js_dist %>/html5shiv.js',
       },
       respond: {
-        src:"<%= dirs.respond %>/respond.min.js",
-        dest: "<%= dirs.js_dist %>/respond.min.js",
+        src: '<%= dirs.respond %>/respond.min.js',
+        dest: '<%= dirs.js_dist %>/respond.min.js',
       },
       font_awesome: {
         files: [
           {
-            expand: true, 
-            src: '<%= dirs.fa %>/fonts/*', 
-            dest: 'font/', 
-            flatten: true, 
+            expand: true,
+            src: '<%= dirs.fa %>/fonts/*',
+            dest: 'font/',
+            flatten: true,
             filter: 'isFile',
           },
           {
-            expand: true, 
-            src: '<%= dirs.fa %>/css/*.min.css', 
-            flatten: true, 
-            dest: '<%= dirs.css %>', 
+            expand: true,
+            src: '<%= dirs.fa %>/css/*.min.css',
+            flatten: true,
+            dest: '<%= dirs.css %>',
             filter: 'isFile'
           },
         ],
@@ -214,24 +217,24 @@ module.exports = function(grunt) {
         nonull: true,
       }
     },
-    
+
     imagemin: {
       dynamic: {
         options: {
-          optimizationLevel:3,
+          optimizationLevel: 3,
         },
         files: [{
-          expand:true,
+          expand: true,
           cwd: '<%= dirs.img_src %>',
           src: ['**/*.{png,jpg,gif}'],
           dest: '<%= dirs.img_dist %>',
         }],
       },
     },
-    
+
     svgmin: {
       options: {
-        
+
       },
       dist: {
         files: [{
@@ -245,21 +248,21 @@ module.exports = function(grunt) {
     },
     favicons: {
       options: {
-        html: "_includes/head-icons.html",
-        HTMLPrefix: "{{site.baseurl}}/img/icons/",
+        html: '_includes/head-icons.html',
+        HTMLPrefix: '{{site.baseurl}}/img/icons/',
         precomposed: false,
         trueColor: true,
-        appleTouchBackgroundColor:"#692161",
-        coast:true,
-        tileBlackWhite:false,
-        tileColor:"#692161",
+        appleTouchBackgroundColor: '#692161',
+        coast: true,
+        tileBlackWhite: false,
+        tileColor: '#692161',
       },
       icons: {
-        src: "<%= dirs.img_src %>/source.favicon.png",
-        dest: "<%= dirs.img_dist %>/icons",
+        src: '<%= dirs.img_src %>/source.favicon.png',
+        dest: '<%= dirs.img_dist %>/icons',
       },
     },
-    
+
     watch: {
       options: {
         spawn: false,
@@ -270,38 +273,38 @@ module.exports = function(grunt) {
       },
       js: {
         files: [
-          "<%= dirs.js_src %>/*.js"
+          '<%= dirs.js_src %>/*.js'
         ],
-        tasks: [ "jshint:all" , "concat:custom", "uglify:custom" ],
+        tasks: [ 'jshint:all', 'concat:custom', 'uglify:custom' ],
       },
       less_bs: {
         files: [
-          "<%= dirs.less %>/nvgay-*.less",
-          "<%= dirs.less %>/bootstrap-*.less",
+          '<%= dirs.less %>/nvgay-*.less',
+          '<%= dirs.less %>/bootstrap-*.less',
         ],
-        tasks: [ "less:bootstrap" ],
+        tasks: [ 'less:bootstrap' ],
       },
       less_fonts: {
-        files: "<%= dirs.less %>/font-*.less",
-        tasks: [ "less:fonts" , "less:font_awesome" ],
+        files: '<%= dirs.less %>/font-*.less',
+        tasks: [ 'less:fonts', 'less:font_awesome' ],
       },
       img: {
         options: {
-          cwd: "<%= dirs.img_src %>",
+          cwd: '<%= dirs.img_src %>',
         },
-        files: ["**/*.{png,jpg,gif}"],
-        tasks: [ "imagemin:dynamic" ],
+        files: ['**/*.{png,jpg,gif}'],
+        tasks: [ 'imagemin:dynamic' ],
       },
       svg_process: {
         options: {
-          cwd: "<%= dirs.img_src %>",
+          cwd: '<%= dirs.img_src %>',
         },
-        files: [ "**/*.svg" ],
-        tasks: [ "svgmin" ],
+        files: [ '**/*.svg' ],
+        tasks: [ 'svgmin' ],
       },
     },
   });
-  
+
   // Load the plugins for tasks.
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-copy');
@@ -312,21 +315,21 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-svgmin');
   grunt.loadNpmTasks('grunt-favicons');
-  
+
   // Inital Setup Task
-  grunt.registerTask( 'init', [ 'init' , 'build' , 'favicons' ] );
-  
+  grunt.registerTask('init', [ 'init', 'build', 'favicons']);
+
   // SVG Alias
-  grunt.registerTask( 'svg' , [ 'svgmin' ] );
-  
+  grunt.registerTask('svg', ['svgmin']);
+
   // Build Task
-  grunt.registerTask( 'build' , [ 'copy' , 'jshint' , 'concat' , 'svgmin' , 'imagemin' , 'less' , 'uglify' ] );
-  
+  grunt.registerTask('build', ['copy', 'jshint', 'concat', 'svgmin', 'imagemin', 'less', 'uglify']);
+
   // favicons Alias
-  grunt.registerTask( 'icon' , [ 'favicons' ] );
-  grunt.registerTask( 'icons' , [ 'favicons' ] );
+  grunt.registerTask('icon', ['favicons']);
+  grunt.registerTask('icons', [ 'favicons']);
 
   // Default task(s).
-  grunt.registerTask( 'default' , ['build' , 'watch'] );
-  
+  grunt.registerTask('default', ['build']);
+
 };

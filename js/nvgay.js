@@ -1,6 +1,6 @@
-$(document).ready( function(){
+$(document).ready(function () {
   // On ready functions
-  
+
   // Enable Colorbox links
-  $(".colorbox").colorbox();
+  $('.colorbox').colorbox();
 });
